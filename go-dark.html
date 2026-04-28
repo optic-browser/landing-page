@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Optic Privacy Lab: practical checklist to reduce tracking and go dark online."
+    />
+    <title>Optic Privacy Lab | Go Dark Checklist</title>
+    <link rel="icon" href="src/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="src/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/web-180.png" />
+    <link rel="mask-icon" href="src/optic-icon.svg" color="#8f9f8a" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#f7f4ee" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar reveal">
+      <a class="topbar-brand" href="index.html" aria-label="Optic home">
+        <img
+          src="src/icon-64.png"
+          class="topbar-brand__icon"
+          alt=""
+          width="22"
+          height="22"
+          decoding="async"
+        />
+        <span>Optic</span>
+      </a>
+      <nav class="contact-block" aria-label="Top links">
+        <a href="mailto:hello@optic.browser" class="contact-link">Contact</a>
+        <a
+          href="https://github.com/optic-browser"
+          class="contact-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        <a href="go-dark.html" class="contact-link">Privacy Checklist</a>
+        <a href="data-map.html" class="contact-link">Who Collects Data</a>
+        <a href="full-private.html" class="contact-link">Advanced Privacy</a>
+      </nav>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero reveal">
+        <p class="eyebrow">Privacy Lab / Guide 01</p>
+        <h1>Go Dark Checklist</h1>
+        <p class="subpage-kicker">
+          This is a practical progression: start with low-friction wins, then move into
+          stronger compartmentalization. Most people can cut their tracking surface by 60%
+          to 80% without leaving normal life.
+        </p>
+      </section>
+
+      <section class="section reveal" id="quick-wins">
+        <h2>Phase 1: Same day upgrades</h2>
+        <p class="section-intro">
+          These changes are fast and reduce cross-site profiling right away.
+        </p>
+        <div class="steps-grid">
+          <article class="step-card">
+            <h3>1. Lock account settings</h3>
+            <p>
+              Disable ad personalization and activity history where possible. Use each
+              platform's privacy dashboards to delete and auto-delete historical activity.
+            </p>
+          </article>
+          <article class="step-card">
+            <h3>2. Harden your browser</h3>
+            <p>
+              Use strict tracking protection, block third-party cookies, disable unnecessary
+              browser telemetry, and run a content blocker by default.
+            </p>
+          </article>
+          <article class="step-card">
+            <h3>3. Split your identities</h3>
+            <p>
+              Keep separate browser profiles for work, personal life, shopping, and research.
+              This breaks many cross-context behavioral links.
+            </p>
+          </article>
+          <article class="step-card">
+            <h3>4. Turn on MFA + passkeys</h3>
+            <p>
+              Strong account security prevents takeover events that can expose years of
+              private content and metadata.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="intermediate">
+        <h2>Phase 2: Reduce metadata leakage</h2>
+        <div class="stack-cards">
+          <article class="card">
+            <h3>Messaging hygiene</h3>
+            <p>
+              Prefer end-to-end encrypted messengers for sensitive communication, review
+              disappearing message settings, and remove cloud backups when threat model
+              requires it.
+            </p>
+            <span class="note-pill">Impact: high</span>
+          </article>
+          <article class="card">
+            <h3>Network hygiene</h3>
+            <p>
+              For routine privacy, use trusted VPN providers. For stronger anonymity needs,
+              use Tor Browser for separate tasks and do not log in to identity-linked
+              accounts in that session.
+            </p>
+            <span class="note-pill">Impact: medium-high</span>
+          </article>
+          <article class="card">
+            <h3>Device permission audit</h3>
+            <p>
+              Remove microphone, camera, contacts, and precise location access from apps
+              that do not need it. Re-check monthly.
+            </p>
+            <span class="note-pill">Impact: medium</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="advanced">
+        <h2>Phase 3: Near-anonymous operating mode</h2>
+        <div class="stack-cards">
+          <article class="card impact-card">
+            <h3>Compartmented personas</h3>
+            <p>
+              Use isolated email aliases, separate phone numbers, and distinct payment
+              methods for each identity context. Never cross-log those contexts.
+            </p>
+          </article>
+          <article class="card impact-card">
+            <h3>Minimize real-name coupling</h3>
+            <p>
+              Avoid reusing profile photos, bios, usernames, and writing signatures across
+              platforms when operating a high-privacy profile.
+            </p>
+          </article>
+          <article class="card impact-card">
+            <h3>Threat-model first</h3>
+            <p>
+              Full anonymity has usability costs. Choose controls based on your risks:
+              harassment, stalking, data brokerage, political exposure, or targeted scams.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="sources">
+        <h2>Evidence and references</h2>
+        <p class="section-intro">
+          These recommendations are based on security guidance from major providers and
+          digital-rights organizations.
+        </p>
+        <div class="reference-panel">
+          <h3>Primary reading</h3>
+          <ol class="reference-list">
+            <li>
+              <a href="https://ssd.eff.org/" target="_blank" rel="noopener noreferrer"
+                >EFF: Surveillance Self-Defense</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://ssd.eff.org/module/seven-steps-digital-security"
+                target="_blank"
+                rel="noopener noreferrer"
+                >EFF: Seven Steps to Digital Security</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://ssd.eff.org/module/how-to-use-tor"
+                target="_blank"
+                rel="noopener noreferrer"
+                >EFF: How to Use Tor</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://myaccount.google.com/privacycheckup"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Google Privacy Checkup</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://account.microsoft.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Microsoft Privacy Dashboard</a
+              >
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="cta reveal" id="return">
+        <h2>Progress beats perfection.</h2>
+        <p>
+          Move in phases. Measure what changed. Keep what makes you safer without
+          breaking your life.
+        </p>
+        <a class="button" href="index.html">Back to Home</a>
+        <p class="subpage-footer-note">Last updated: April 18, 2026</p>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <p>Optic Privacy Lab</p>
+      <p>Operational privacy for real people.</p>
+    </footer>
+
+    <script src="subpages.js"></script>
+  </body>
+</html>

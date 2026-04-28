@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Optic Privacy Lab: advanced full-private operating model for users with high privacy needs."
+    />
+    <title>Optic Privacy Lab | Full Private Mode</title>
+    <link rel="icon" href="src/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="src/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/web-180.png" />
+    <link rel="mask-icon" href="src/optic-icon.svg" color="#8f9f8a" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#f7f4ee" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar reveal">
+      <a class="topbar-brand" href="index.html" aria-label="Optic home">
+        <img
+          src="src/icon-64.png"
+          class="topbar-brand__icon"
+          alt=""
+          width="22"
+          height="22"
+          decoding="async"
+        />
+        <span>Optic</span>
+      </a>
+      <nav class="contact-block" aria-label="Top links">
+        <a href="mailto:hello@optic.browser" class="contact-link">Contact</a>
+        <a
+          href="https://github.com/optic-browser"
+          class="contact-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        <a href="go-dark.html" class="contact-link">Privacy Checklist</a>
+        <a href="data-map.html" class="contact-link">Who Collects Data</a>
+        <a href="full-private.html" class="contact-link">Advanced Privacy</a>
+      </nav>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero reveal">
+        <p class="eyebrow">Privacy Lab / Guide 03</p>
+        <h1>Full Private Mode</h1>
+        <p class="subpage-kicker">
+          This model is for people who need stronger operational privacy. It is not about
+          doing anything illegal. It is about minimizing exposure, profiling, and data
+          brokerage risk.
+        </p>
+      </section>
+
+      <section class="section reveal" id="model">
+        <h2>Operating principles</h2>
+        <div class="cards two-col">
+          <article class="card">
+            <h3>Compartment everything</h3>
+            <p>
+              Separate identity domains: personal, work, public, and sensitive research.
+              Do not reuse accounts, browsers, or payment methods across compartments.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Minimize persistence</h3>
+            <p>
+              Keep minimal long-term histories. Use ephemeral sessions for high-risk tasks
+              and reduce account linkage over time.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Assume metadata survives</h3>
+            <p>
+              Even encrypted content can leak timing, network path, and social graph
+              patterns. Plan around metadata.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Prefer local control</h3>
+            <p>
+              When possible, keep data and model inference local to your own device to
+              reduce external processing surfaces.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="playbook">
+        <h2>Practical playbook</h2>
+        <div class="stack-cards">
+          <article class="card impact-card">
+            <h3>Identity layer</h3>
+            <p>
+              Use unique aliases, unique credentials, and unique recovery channels per
+              compartment. Never let one breach unlock all identities.
+            </p>
+          </article>
+          <article class="card impact-card">
+            <h3>Network layer</h3>
+            <p>
+              For sensitive research, use a dedicated environment and avoid logging into
+              real-name accounts in the same session. Keep routines consistent to avoid
+              accidental cross-linking.
+            </p>
+          </article>
+          <article class="card impact-card">
+            <h3>Device layer</h3>
+            <p>
+              Maintain clean, updated systems, remove unnecessary apps, and revoke stale
+              app permissions. Keep sensitive workflows on a separate user account or
+              dedicated device where feasible.
+            </p>
+          </article>
+          <article class="card impact-card">
+            <h3>Communication layer</h3>
+            <p>
+              Use end-to-end encrypted tools for private conversations and verify safety
+              settings regularly, including disappearing messages and contact controls.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="limits">
+        <h2>Limits and tradeoffs</h2>
+        <div class="reference-panel">
+          <h3>Important reality check</h3>
+          <p>
+            Full anonymity is difficult in real life because payment rails, phone networks,
+            social graphs, and behavioral patterns can still correlate identities. The goal
+            is risk reduction, not magical invisibility.
+          </p>
+        </div>
+        <div class="reference-panel">
+          <h3>Common failure points</h3>
+          <ol class="reference-list">
+            <li>Logging a real-name account inside a "private" session.</li>
+            <li>Reusing usernames or profile photos between compartments.</li>
+            <li>Using one phone number for all account recovery paths.</li>
+            <li>Turning on privacy settings once and never auditing again.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section reveal" id="sources">
+        <h2>Supporting references</h2>
+        <div class="reference-panel">
+          <h3>Read next</h3>
+          <ol class="reference-list">
+            <li>
+              <a href="https://ssd.eff.org/module/your-security-plan" target="_blank" rel="noopener noreferrer"
+                >EFF: Your Security Plan</a
+              >
+            </li>
+            <li>
+              <a href="https://ssd.eff.org/module/why-metadata-matters" target="_blank" rel="noopener noreferrer"
+                >EFF: Why Communication Metadata Matters</a
+              >
+            </li>
+            <li>
+              <a href="https://ssd.eff.org/module/what-fingerprinting" target="_blank" rel="noopener noreferrer"
+                >EFF: What Is Fingerprinting?</a
+              >
+            </li>
+            <li>
+              <a href="https://ssd.eff.org/module/how-to-use-signal" target="_blank" rel="noopener noreferrer"
+                >EFF: How to Use Signal</a
+              >
+            </li>
+            <li>
+              <a href="https://ssd.eff.org/module/how-to-use-tor" target="_blank" rel="noopener noreferrer"
+                >EFF: How to Use Tor</a
+              >
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="cta reveal" id="return">
+        <h2>Privacy is a discipline.</h2>
+        <p>
+          Treat it like physical security: layered controls, routine audits, and clear
+          habits under stress.
+        </p>
+        <a class="button" href="index.html">Back to Home</a>
+        <p class="subpage-footer-note">Last updated: April 18, 2026</p>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <p>Optic Privacy Lab</p>
+      <p>Layered privacy, realistic tradeoffs.</p>
+    </footer>
+
+    <script src="subpages.js"></script>
+  </body>
+</html>

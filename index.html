@@ -1,0 +1,447 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Optic Browser — privacy you can tune, speed you can feel, and local AI you control. Built on Firefox ESR."
+    />
+    <style>
+      html,
+      body {
+        margin: 0;
+        background: #f7f4ee;
+      }
+    </style>
+    <title>Optic Browser | See the web clearly.</title>
+    <link rel="icon" href="src/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="src/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/web-180.png" />
+    <link rel="mask-icon" href="src/optic-icon.svg" color="#8f9f8a" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#f7f4ee" />
+    <script>
+      (function () {
+        var root = document.documentElement;
+
+        if ('scrollRestoration' in history) {
+          history.scrollRestoration = 'manual';
+        }
+
+        var navEntry = performance.getEntriesByType('navigation')[0];
+        var isReload = navEntry && navEntry.type === 'reload';
+
+        if (isReload) {
+          if (location.hash) {
+            history.replaceState(null, '', location.pathname + location.search);
+          }
+          window.scrollTo(0, 0);
+        }
+
+        function markFontsReady() {
+          root.classList.add('fonts-ready');
+        }
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(markFontsReady).catch(markFontsReady);
+          setTimeout(markFontsReady, 700);
+        } else {
+          markFontsReady();
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="topbar topbar-intro">
+      <a class="topbar-brand" href="#top" aria-label="Optic home">
+        <img
+          src="src/icon-64.png"
+          class="topbar-brand__icon"
+          alt=""
+          width="22"
+          height="22"
+          decoding="async"
+        />
+        <span>Optic</span>
+      </a>
+      <nav class="contact-block" aria-label="Top links">
+        <a href="mailto:hello@optic.browser" class="contact-link">Contact</a>
+        <a
+          href="https://github.com/optic-browser"
+          class="contact-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        <a href="go-dark.html" class="contact-link">Privacy Checklist</a>
+        <a href="data-map.html" class="contact-link">Who Collects Data</a>
+        <a href="full-private.html" class="contact-link">Advanced Privacy</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="opening" id="top">
+        <h1 class="opening-title" aria-label="See the web clearly.">
+          <span class="opening-line word-see">See</span>
+          <span class="opening-line word-the">the</span>
+          <span class="opening-line word-web">web</span>
+          <span class="opening-line word-clearly">clearly.</span>
+        </h1>
+        <p class="opening-copy">
+          A calmer browser experience with speed, privacy, and local intelligence in
+          balance.
+        </p>
+        <div class="hero-tools">
+          <a
+            class="download-btn"
+            id="download"
+            href="https://github.com/optic-browser/releases"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Optic"
+          >
+            <span class="download-btn__text">Download</span>
+            <span class="download-btn__icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35 35" class="download-btn__svg">
+                <path d="M17.5,22.131a1.249,1.249,0,0,1-1.25-1.25V2.187a1.25,1.25,0,0,1,2.5,0V20.881A1.25,1.25,0,0,1,17.5,22.131Z"></path>
+                <path d="M17.5,22.693a3.189,3.189,0,0,1-2.262-.936L8.487,15.006a1.249,1.249,0,0,1,1.767-1.767l6.751,6.751a.7.7,0,0,0,.99,0l6.751-6.751a1.25,1.25,0,0,1,1.768,1.767l-6.752,6.751A3.191,3.191,0,0,1,17.5,22.693Z"></path>
+                <path d="M31.436,34.063H3.564A3.318,3.318,0,0,1,.25,30.749V22.011a1.25,1.25,0,0,1,2.5,0v8.738a.815.815,0,0,0,.814.814H31.436a.815.815,0,0,0,.814-.814V22.011a1.25,1.25,0,1,1,2.5,0v8.738A3.318,3.318,0,0,1,31.436,34.063Z"></path>
+              </svg>
+            </span>
+          </a>
+          <a class="button ghost opening-explore" href="#story-nav">Explore the system</a>
+        </div>
+        <a class="scroll-hint" href="#story-nav" aria-label="Scroll down to explore">
+          <span class="scroll-hint-text">Scroll</span>
+          <span class="scroll-hint-arrow" aria-hidden="true">&#8595;</span>
+        </a>
+      </section>
+
+      <nav class="story-nav reveal" id="story-nav" aria-label="Page sections">
+        <a class="story-link" href="#snapshot">Snapshot</a>
+        <a class="story-link" href="#foundation">Foundation</a>
+        <a class="story-link" href="#privacy">Privacy</a>
+        <a class="story-link" href="#ai">Ollama</a>
+        <a class="story-link" href="#surveillance-pricing">Pricing Risk</a>
+        <a class="story-link" href="#about-us">About</a>
+        <a class="story-link" href="#start">Vision</a>
+      </nav>
+
+      <section class="hero reveal" id="manifesto">
+        <h2>Calm performance. Clear boundaries.</h2>
+        <p class="lede">
+          Built on Firefox ESR with Mercury-inspired performance work and privacy
+          hardening inspired by LibreWolf and Arkenfox, Optic gives you a fast browser
+          where privacy is not just on or off — it is fully tunable.
+        </p>
+        <div class="hero-tools">
+          <a class="button ghost" href="#snapshot">Run live snapshot</a>
+          <a class="button ghost" href="#surveillance-pricing">Why this matters</a>
+        </div>
+      </section>
+
+      <section class="section reveal" id="snapshot">
+        <h2>This page can read real signals from your browser.</h2>
+        <p class="section-copy">
+          The left side shows values detected in your current browser right now. The
+          right side simulates what websites would see if Optic privacy layers were
+          applied.
+        </p>
+        <p class="snapshot-warning">
+          Even without a login, these signals can be combined into a stable profile.
+        </p>
+        <div class="mode-row" role="group" aria-label="Optic privacy level">
+          <span class="mode-label">Optic level</span>
+          <button class="mode-btn" data-level="low" type="button">Low</button>
+          <button class="mode-btn" data-level="medium" type="button">Medium</button>
+          <button class="mode-btn is-active" data-level="high" type="button">High</button>
+        </div>
+        <div class="hero-grid">
+          <article class="panel panel-warn">
+            <h2>Without Optic, this page learns:</h2>
+            <ul class="signal-list" id="raw-signals">
+              <li><span>IP address</span><strong id="sig-ip">Detecting...</strong></li>
+              <li><span>Operating system</span><strong id="sig-platform">Detecting...</strong></li>
+              <li><span>Browser signature</span><strong id="sig-ua">Detecting...</strong></li>
+              <li><span>GPU renderer</span><strong id="sig-gpu">Detecting...</strong></li>
+              <li><span>Screen + color depth</span><strong id="sig-screen">Detecting...</strong></li>
+              <li><span>Language + timezone</span><strong id="sig-locale">Detecting...</strong></li>
+              <li><span>Device memory + CPU cores</span><strong id="sig-hardware">Detecting...</strong></li>
+              <li><span>Cookies readable on this site</span><strong id="sig-cookie">Detecting...</strong></li>
+              <li><span>Local + session storage</span><strong id="sig-storage">Detecting...</strong></li>
+              <li><span>Referrer source</span><strong id="sig-referrer">Detecting...</strong></li>
+              <li><span>Network profile hint</span><strong id="sig-network">Detecting...</strong></li>
+              <li><span>Media device footprint</span><strong id="sig-devices">Detecting...</strong></li>
+              <li><span>History depth</span><strong id="sig-history">Detecting...</strong></li>
+              <li><span>Do Not Track signal</span><strong id="sig-dnt">Detecting...</strong></li>
+            </ul>
+          </article>
+          <article class="panel panel-safe">
+            <h2>With Optic, this page learns:</h2>
+            <ul class="signal-list" id="optic-signals">
+              <li><span>IP address</span><strong id="optic-ip">Shared via masked route</strong></li>
+              <li><span>Operating system</span><strong id="optic-platform">Generic platform class</strong></li>
+              <li><span>Browser signature</span><strong id="optic-ua">Normalized Optic token</strong></li>
+              <li><span>GPU renderer</span><strong id="optic-gpu">Coarse graphics bucket</strong></li>
+              <li><span>Screen + color depth</span><strong id="optic-screen">Rounded viewport class</strong></li>
+              <li><span>Language + timezone</span><strong id="optic-locale">Region-safe profile</strong></li>
+              <li><span>Device memory + CPU cores</span><strong id="optic-hardware">Capability tier only</strong></li>
+              <li><span>Cookies readable on this site</span><strong id="optic-cookie">Strict first-party policy</strong></li>
+              <li><span>Local + session storage</span><strong id="optic-storage">Partitioned by context</strong></li>
+              <li><span>Referrer source</span><strong id="optic-referrer">Origin-minimized referrer</strong></li>
+              <li><span>Network profile hint</span><strong id="optic-network">Normalized network category</strong></li>
+              <li><span>Media device footprint</span><strong id="optic-devices">Coarse capability hint only</strong></li>
+              <li><span>History depth</span><strong id="optic-history">No useful entropy exposed</strong></li>
+              <li><span>Do Not Track signal</span><strong id="optic-dnt">Policy-managed privacy signal</strong></li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="foundation">
+        <h2>Performance-first, surveillance-last.</h2>
+        <div class="cards two-col">
+          <article class="card">
+            <h3>Firefox ESR Core</h3>
+            <p>
+              Optic starts from Firefox ESR so the browser inherits Mozilla's long-term
+              security cadence, stability, and native privacy primitives.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Mercury-Inspired Performance</h3>
+            <p>
+              Build tuning and compiler flags are studied and applied where they improve
+              speed without compromising trust.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Privacy via user.js</h3>
+            <p>
+              Firefox's preference system lets Optic ship opinionated defaults like RFP,
+              Total Cookie Protection, and DNS over HTTPS without patching core source.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="privacy">
+        <h2>One browser. Four levels of control.</h2>
+        <p class="section-copy">
+          Choose a profile in seconds and fine-tune every control independently.
+          uBlock Origin is preinstalled, Firefox-native Total Cookie Protection is on,
+          and DNS over HTTPS is part of the privacy stack.
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Off</th>
+                <th>Low</th>
+                <th>Medium</th>
+                <th>High</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fingerprinting / RFP</td>
+                <td>Off</td>
+                <td>Site-safe defaults</td>
+                <td>Strict normalization</td>
+                <td>Maximum hardening</td>
+              </tr>
+              <tr>
+                <td>Telemetry</td>
+                <td>Enabled</td>
+                <td>Minimal</td>
+                <td>Opt-in only</td>
+                <td>Total off</td>
+              </tr>
+              <tr>
+                <td>HTTPS</td>
+                <td>Optional</td>
+                <td>Preferred</td>
+                <td>Soft enforced</td>
+                <td>Always enforced</td>
+              </tr>
+              <tr>
+                <td>Cookies / TCP</td>
+                <td>Off</td>
+                <td>Protected third-party</td>
+                <td>Site-isolated</td>
+                <td>Strict + consent blocker</td>
+              </tr>
+              <tr>
+                <td>DNS / DoH</td>
+                <td>Off</td>
+                <td>Auto select</td>
+                <td>Privacy resolver</td>
+                <td>Forced custom resolver</td>
+              </tr>
+              <tr>
+                <td>DRM / EME</td>
+                <td>Off</td>
+                <td>Optional</td>
+                <td>One-click enable</td>
+                <td>Enabled</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section reveal" id="ai">
+        <h2>Ollama integration.</h2>
+        <div class="cards three-col">
+          <article class="card">
+            <h3>Page-Aware Sidebar</h3>
+            <p>Optional local chat powered by Ollama that can read and explain your current page.</p>
+          </article>
+          <article class="card">
+            <h3>Article Summaries</h3>
+            <p>Turn long reads into concise summaries with a single local action.</p>
+          </article>
+          <article class="card">
+            <h3>Selection Translation</h3>
+            <p>Translate highlighted text instantly, locally, and privately with Ollama workflows.</p>
+          </article>
+        </div>
+        <p class="section-copy">
+          Everything is optional: enable or disable the integration, choose your
+          model, and keep all processing on your own machine.
+        </p>
+      </section>
+
+      <section class="section reveal" id="customization">
+        <h2>Readable configs. Shareable themes.</h2>
+        <div class="cards two-col">
+          <article class="card">
+            <h3>Config in JSON or TOML</h3>
+            <p>Simple, versionable settings built for real users and teams.</p>
+          </article>
+          <article class="card">
+            <h3>.optic-theme Files</h3>
+            <p>Create, import, and share visual profiles across installations.</p>
+          </article>
+        </div>
+        <p class="section-copy">
+          Documentation ships from day one in English and Spanish.
+        </p>
+      </section>
+
+      <section class="section reveal" id="surveillance-pricing">
+        <h2>Surveillance pricing is likely coming fast.</h2>
+        <p class="section-copy">
+          As data models get better, websites and platforms can charge different
+          prices to different people based on risk scores, urgency signals, location,
+          or device profile. Two users can see different offers for the same product.
+        </p>
+        <div class="cards two-col">
+          <article class="card impact-card">
+            <h3>How surveillance pricing works</h3>
+            <p>
+              Fingerprints, behavioral signals, and cross-site profiles can feed
+              predictive models that decide who sees discounts and who gets the
+              expensive version first.
+            </p>
+          </article>
+          <article class="card impact-card">
+            <h3>How Optic helps</h3>
+            <p>
+              Optic reduces entropy, partitions state, and minimizes leaked metadata,
+              making profiling less reliable and personalized overcharging harder to
+              enforce.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="about-us">
+        <h2>About Us</h2>
+        <p class="section-copy">
+          Optic began with a simple idea: privacy tools should feel powerful and calm,
+          not intimidating. We are building a browser where people can browse faster,
+          understand what is being collected, and tune protection level by level.
+        </p>
+        <div class="cards two-col">
+          <article class="card">
+            <h3>Our vision</h3>
+            <p>
+              From the project spec and Firefox edition notes: privacy by default,
+              clear controls, long-term security updates, and elegant design that does
+              not feel like a security console. The goal is control without friction.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Why the name "Optic"</h3>
+            <p>
+              The name reflects clarity. Browsing should feel like focusing a lens:
+              less noise, clearer signals, and full awareness of what the web can see.
+            </p>
+          </article>
+        </div>
+        <div class="about-note">
+          <h3>Logo inspiration: LP01 fiber optic cable</h3>
+          <p>
+            The concentric-ring logo is inspired by the layered cross-section profile
+            of an LP01 fiber optic mode. It symbolizes guided light, precise routing,
+            and stable transmission - the same principles we want for private browsing.
+          </p>
+        </div>
+      </section>
+
+      <section class="cta reveal" id="start">
+        <h2>Optic is building a calmer web.</h2>
+        <p>
+          Faster by design, private by default, and transparent all the way down.
+        </p>
+        <a class="button" href="#top">Back to top</a>
+      </section>
+    </main>
+
+    <nav class="quick-actions" id="quick-actions" aria-label="Quick actions">
+      <a
+        class="quick-action quick-action-download"
+        href="https://github.com/optic-browser/releases"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download Optic"
+      >
+        <span class="quick-action__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="quick-action__svg">
+            <path d="M12 3a1 1 0 0 1 1 1v9.17l2.59-2.58a1 1 0 1 1 1.41 1.41l-4.29 4.3a1 1 0 0 1-1.42 0l-4.29-4.3a1 1 0 0 1 1.41-1.41L11 13.17V4a1 1 0 0 1 1-1Z" />
+            <path d="M5 19a1 1 0 0 1 1-1h12a1 1 0 1 1 0 2H6a1 1 0 0 1-1-1Z" />
+          </svg>
+        </span>
+        <span>Download</span>
+      </a>
+      <a class="quick-action" href="#top" aria-label="Back to top">
+        <span class="quick-action__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="quick-action__svg">
+            <path d="M12 5a1 1 0 0 1 .71.29l4.3 4.3a1 1 0 0 1-1.42 1.41L13 8.41V20a1 1 0 1 1-2 0V8.41L8.41 11A1 1 0 0 1 7 9.59l4.29-4.3A1 1 0 0 1 12 5Z" />
+          </svg>
+        </span>
+        <span>Back to top</span>
+      </a>
+    </nav>
+
+    <footer class="footer reveal">
+      <p>Optic Browser</p>
+      <p>See the web clearly.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

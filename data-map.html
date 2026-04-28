@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Optic Privacy Lab: company-by-company map of data collection categories and sources."
+    />
+    <title>Optic Privacy Lab | Who Collects What</title>
+    <link rel="icon" href="src/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon-16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="src/favicon-48.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="src/web-180.png" />
+    <link rel="mask-icon" href="src/optic-icon.svg" color="#8f9f8a" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="theme-color" content="#f7f4ee" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="topbar reveal">
+      <a class="topbar-brand" href="index.html" aria-label="Optic home">
+        <img
+          src="src/icon-64.png"
+          class="topbar-brand__icon"
+          alt=""
+          width="22"
+          height="22"
+          decoding="async"
+        />
+        <span>Optic</span>
+      </a>
+      <nav class="contact-block" aria-label="Top links">
+        <a href="mailto:hello@optic.browser" class="contact-link">Contact</a>
+        <a
+          href="https://github.com/optic-browser"
+          class="contact-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >GitHub</a
+        >
+        <a href="go-dark.html" class="contact-link">Privacy Checklist</a>
+        <a href="data-map.html" class="contact-link">Who Collects Data</a>
+        <a href="full-private.html" class="contact-link">Advanced Privacy</a>
+      </nav>
+    </header>
+
+    <main class="subpage-main">
+      <section class="subpage-hero reveal">
+        <p class="eyebrow">Privacy Lab / Guide 02</p>
+        <h1>Who Collects What (and from where)</h1>
+        <p class="subpage-kicker">
+          This map summarizes documented collection behavior from official policies.
+          Always read full policy text before making legal or compliance decisions.
+        </p>
+      </section>
+
+      <section class="section reveal" id="map">
+        <h2>Collection map</h2>
+        <p class="section-intro">
+          Table format: company, typical data categories, and source path.
+        </p>
+
+        <div class="source-table-wrap">
+          <table class="source-table">
+            <thead>
+              <tr>
+                <th>Company</th>
+                <th>What they say they collect</th>
+                <th>Source path</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Google</strong></td>
+                <td>
+                  Account data, activity history, location signals, app/browser/device
+                  identifiers, activity on partner sites/apps, and ad interaction data.
+                </td>
+                <td>
+                  User-provided data, automatic device/service logging, cookies/local
+                  storage, trusted/public/partner sources.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Microsoft</strong></td>
+                <td>
+                  Data from direct interactions, product usage, diagnostics, account and
+                  contact data, cookies/beacons, and some third-party data.
+                </td>
+                <td>
+                  Direct user input, product telemetry, partner/vendor integrations,
+                  affiliates/subsidiaries, and ad/analytics systems.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>TikTok</strong></td>
+                <td>
+                  Profile/account data, user content and metadata, device/network
+                  fingerprints, usage and ad interaction data, contacts, and location.
+                </td>
+                <td>
+                  User-provided content, automatic collection, advertisers/publishers and
+                  measurement partners, third-party account links, and public sources.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>LinkedIn</strong></td>
+                <td>
+                  Profile and employment data, service usage logs, ad interaction data,
+                  device IDs/IP, partner-provided professional data, and inferred traits.
+                </td>
+                <td>
+                  User profile/posts, others' uploads and mentions, partner/customer feeds,
+                  cookies/pixels/ad tags, and cross-service integrations.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>OpenAI</strong></td>
+                <td>
+                  Account details, prompts/content uploads, log and usage data, device and
+                  location approximations, cookies, and selected third-party/public data.
+                </td>
+                <td>
+                  User input, service interaction logs, optional connected services,
+                  security/marketing partners, and public internet data for model work.
+                </td>
+              </tr>
+              <tr>
+                <td><strong>Snap</strong></td>
+                <td>
+                  Account/profile data, content interactions, ad identifiers, device and
+                  sensor details, location, contact graph, and advertiser-linked signals.
+                </td>
+                <td>
+                  User-provided data, generated usage/content metadata, cookies/pixels,
+                  linked third-party services, advertisers, affiliates, and other users.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section reveal" id="references">
+        <h2>Policy references</h2>
+        <div class="reference-panel">
+          <h3>Official source links</h3>
+          <ol class="reference-list">
+            <li>
+              <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+                >Google Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://privacy.microsoft.com/en-us/privacystatement"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Microsoft Privacy Statement</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.tiktok.com/legal/page/us/privacy-policy/en"
+                target="_blank"
+                rel="noopener noreferrer"
+                >TikTok U.S. Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/legal/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                >LinkedIn Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://openai.com/policies/privacy-policy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                >OpenAI Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://values.snap.com/privacy/privacy-policy"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Snap Privacy Policy</a
+              >
+            </li>
+          </ol>
+        </div>
+
+        <div class="reference-panel">
+          <h3>How to use this map</h3>
+          <p>
+            Use it as a decision layer: if a service pulls data from many external sources,
+            isolate it in a separate browser profile and reduce granted app permissions.
+          </p>
+        </div>
+      </section>
+
+      <section class="cta reveal" id="return">
+        <h2>Control starts with visibility.</h2>
+        <p>
+          You cannot reduce exposure you cannot see. Map first, then choose mitigations.
+        </p>
+        <a class="button" href="index.html">Back to Home</a>
+        <p class="subpage-footer-note">Last updated: April 18, 2026</p>
+      </section>
+    </main>
+
+    <footer class="footer reveal">
+      <p>Optic Privacy Lab</p>
+      <p>Evidence-backed privacy education.</p>
+    </footer>
+
+    <script src="subpages.js"></script>
+  </body>
+</html>
